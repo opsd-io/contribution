@@ -1,30 +1,8 @@
 # Terraform modules
 
-## Repository structure
+## Useful links
 
-The below diagram shows a typical terraform module repo structure. To not reinvent the wheel, we adopted the [schema](https://www.terraform.io/language/modules/develop/structure) proposed by Terraform team.
-
-```
-.
-├── README.md
-├── main.tf
-├── variables.tf
-├── outputs.tf
-├── ...
-├── modules/
-│   ├── nestedA/
-│   │   ├── README.md
-│   │   ├── variables.tf
-│   │   ├── main.tf
-│   │   ├── outputs.tf
-│   ├── nestedB/
-│   ├── .../
-├── examples/
-│   ├── exampleA/
-│   │   ├── main.tf
-│   ├── exampleB/
-│   ├── .../
-```
+[Project](https://github.com/orgs/opsd-io/projects/1)
 
 ## Tools
 
@@ -169,3 +147,29 @@ The full hooks list can be found in the [.pre-commit-config.yaml](.pre-commit-co
 ## Versioning
 
 The module should be tagged using SemVer and a changelog. Use the [semantic commits](https://www.conventionalcommits.org/en/v1.0.0/) so that we can auto-generate the changelog.
+
+## Repository structure
+
+The below diagram shows a typical terraform module repo structure. To not reinvent the wheel, we adopted the [schema](https://www.terraform.io/language/modules/develop/structure) proposed by Terraform team.
+
+```
+.
+├── README.md
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── ...
+├── modules/
+│   ├── nestedA/
+│   │   ├── README.md
+│   │   ├── variables.tf
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   ├── nestedB/
+│   ├── .../
+├── examples/
+│   ├── exampleA/
+│   │   ├── main.tf
+│   ├── exampleB/
+│   ├── .../
+```
