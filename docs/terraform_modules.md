@@ -2,7 +2,7 @@
 
 ## Useful links
 
-[Project](https://github.com/orgs/opsd-io/projects/1)
+[Project's board](https://github.com/orgs/opsd-io/projects/1)
 
 ## Tools
 
