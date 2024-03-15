@@ -14,6 +14,7 @@ Please help us improve and expand our infrastructure-as-code modules by contribu
 
 ToC:
 * [Terraform general](docs/terraform_general.md)
+* [Terraform modules](docs/terraform_modules.md)
 
 ## Documentation
 
