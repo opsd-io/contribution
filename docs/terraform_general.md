@@ -1,4 +1,4 @@
-# Terraform modules
+# Terraform general
 
 ## Useful links
 
