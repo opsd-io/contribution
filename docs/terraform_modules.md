@@ -84,6 +84,17 @@ variable "name" {
 
 ## Output values
 
+All module outputs must be in `outputs.tf` file.
+Each output must have valid name (see naming rules) and description.
+If output value is sensitive, `sensitive = true` is required, explicit false value is optional, but advised if any other outputs are sensitive.
+
+No empty lines inside output block is allowed.
+Output blocks must be separated by single empty line or double empty line to group outputs.
+
+**Order of arguments**: description, sensitive, value.
+**Reason**: description is close to name; when value is last, multi-lined expressions are more readable.
+The sensitive flag is in the middle as the only remaining option.
+
 ```hcl
 output "name" {
   description = "The ID of null_resource instance."
