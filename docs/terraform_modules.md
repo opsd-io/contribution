@@ -109,3 +109,7 @@ The local block must be at begin of the file, separated by single newline from f
 Every local value defined in outputs file must have `output_` prefix to denote their usage.
 
 ## Resources & data blocks
+
+Pleonasms should be avoided in resource naming.
+That means name like `aws_instance.bastion_instance` is wrong, `aws_instance.bastion` is completely sufficient.
+As best generic and default name, **main** should be used wherever possible, that means `aws_instance.main` is recommended.
