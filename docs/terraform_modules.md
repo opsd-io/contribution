@@ -43,6 +43,23 @@ Most important aspects are described below.
 * `examples/` - directory for examples of using this module. Each example should be placed in separate subdirectory.
   The example directory should have README file that explains what this example is about.
 
+## Terraform files
+
+Terraform files must use UTF-8 encoding without BOM, Unix-line line endings (LF).
+Indent with two spaces, not tabs.
+No whitespaces at line endings.
+Newline at end of file is mandatory.
+
+Remember to `terraform fmt` - before committing your code.
+It is also adviced to check code syntax and conventions with `tflint`.
+Both tools are automatically called by `pre-commit` hooks and their status is also validated in pull request checks.
+
+## Naming objects
+
+Every variable, resource, module invocation and output must use snake case - only lower case, each space is replaced by an underscore (`_`) character.
+The names of variables and outputs as a interface of module must be descriptive and straightforward to understand.
+The names of resources, as an internal thing might be less clear, as long as they stay meaningful.
+
 ## Input variables
 
 ```hcl
