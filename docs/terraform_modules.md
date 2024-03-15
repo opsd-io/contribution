@@ -103,4 +103,9 @@ output "name" {
 }
 ```
 
+It is allowed to define local variables in single `locals` block if and only if they are used only for outputs.
+This special case is to reduce code duplication, ie. when module outputs same value, but in two different formats.
+The local block must be at begin of the file, separated by single newline from first output block.
+Every local value defined in outputs file must have `output_` prefix to denote their usage.
+
 ## Resources & data blocks
