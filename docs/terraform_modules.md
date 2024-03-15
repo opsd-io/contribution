@@ -113,3 +113,15 @@ Every local value defined in outputs file must have `output_` prefix to denote t
 Pleonasms should be avoided in resource naming.
 That means name like `aws_instance.bastion_instance` is wrong, `aws_instance.bastion` is completely sufficient.
 As best generic and default name, **main** should be used wherever possible, that means `aws_instance.main` is recommended.
+
+## Multiple `*.tf` files
+
+When the `main.tf` file becomes too large to navigate easily, it is recommended to split it into multiple files.
+It allows to locate resources faster and focusing on what you are working on better.
+There are no explicit rules when you should do it, however there are rules where you **should no do it**:
+
+* Creating file that is too small.
+  File is considered small if it has less than 25 lines of code or less than 3 objects in it.
+* Creating `data.tf` file with data resources only.
+  In most cases it is bad idea, unless they are strongly coupled together.
+  Even then, it's probably better to call it somehow different.
