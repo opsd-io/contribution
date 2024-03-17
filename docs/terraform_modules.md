@@ -60,6 +60,36 @@ Every variable, resource, module invocation and output must use snake case - onl
 The names of variables and outputs as a interface of module must be descriptive and straightforward to understand.
 The names of resources, as an internal thing might be less clear, as long as they stay meaningful.
 
+## Terraform block
+
+Terraform settings are gathered in the `terraform` block.
+For modules itself, this block should be at the beginning of `main.tf` file.
+Version constrains should define only their minimum allowed version, unless it is know it will not work with particular version (due to bugs) or too new (because of known incompatibilities).
+
+First field in block must be the `required_version` to define Terraform runtime version, then after empty line the `required_providers` block with all providers required by this module defined in alphabetical order.
+No empty lines are allowed inside required providers block.
+
+```hcl
+terraform {
+  required_version = ">= 1.5.5"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+```
+
+For root-modules, including examples, the `terraform` block should be in separate file `terraform.tf`, together with providers configuration (all `provider` blocks).
+Providers blocks must be after Terraform settings, with empty lines between them, defined in alphabetical order.
+Providers that require no configuration (e.g. random or archive) or when all arguments are specified using environment variables should not have any blocks.
+
+Despite the `backend` configuration is nested within `terraform` block, its definition must be in separate `backend.tf` file with all common settings.
+The distinctions for each root-module (ie. different path name) must be set in `backend-config.tfvars` file.
+Reasoning for this is much easier synchronization (copy-paste or symlink friendly) of this block among multiple root modules.
+
 ## Input variables
 
 ```hcl
