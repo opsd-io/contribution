@@ -60,6 +60,31 @@ Every variable, resource, module invocation and output must use snake case - onl
 The names of variables and outputs as a interface of module must be descriptive and straightforward to understand.
 The names of resources, as an internal thing might be less clear, as long as they stay meaningful.
 
+## Comments
+
+Comment should start with single `#` sign, followed by single space.
+Usage of `//` is not allowed.
+Multiline comments might be delimited by `/*` and `*/`, but it's preferable to use multiple `#` lines.
+
+Avoid fancy-formatting, ASCII-art boxes, multiple `#` signs at beginning or any at end of lines, etc.
+
+It is allowed to add single or multiline comment at beginning of a file to explain it's purpose, but only if it adds additional information.
+This comment must be followed by single empty line.
+
+It is also accepted to add single line comment, surrounded by empty lines, that describes resources bellow, creating something like a group.
+
+Comment describing particular resource should be right before it, without empty line between comment and resource block.
+
+Avoid unnecessary comments, that means comments that does not provide any additional information.
+For example the `aws_instance.bastion` comment should NOT be "The AWS instance for bastion host" - the resource type and name already explained this.
+
+In contrast to meaningless comments, some resources or expressions might require explanation.
+This is true for complex firewall rules, policies, or resources which purpose isn't clear in context of module.
+Best example as multi-line expressions, especially for-expressions (aka. list/map comprehension) that transforms one structure to another
+It is highly advised to explain why and how it is made.
+
+Rule of thumb: less is better. Add comments only if it might help someone else to understand your code.
+
 ## Terraform block
 
 Terraform settings are gathered in the `terraform` block.
