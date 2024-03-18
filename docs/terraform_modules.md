@@ -177,6 +177,18 @@ There are no explicit rules when you should do it, however there are rules where
 
 * Creating file that is too small.
   File is considered small if it has less than 25 lines of code or less than 3 objects in it.
+* Creating files based on their type, rather than composition.
+  For example if module creates multiple S3 buckets with policies, it is better to put bucket+policy pair per file rather than all buckets in one and policies in another.
 * Creating `data.tf` file with data resources only.
   In most cases it is bad idea, unless they are strongly coupled together.
   Even then, it's probably better to call it somehow different.
+* Creating `locals.tf` with local variables only.
+  The same reason as as above.
+* Creating `versions.tf` file. Required versions specification should be in `main.tf` or in `terraform.tf` (for root-modules only).
+* Creating `providers.tf`.
+  The same reason as as above.
+
+### Naming
+
+The name of additional file should use "kebab-case", that is only lower case, each space replaced by a dash (`-`) character.
+The name must roughly describe what's inside, add header-comment if needed.
