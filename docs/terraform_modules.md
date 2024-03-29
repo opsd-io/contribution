@@ -69,9 +69,10 @@ Both tools are automatically called by `pre-commit` hooks and their status is al
 4. Additional empty lines are allowed to separate logical groups of arguments within a block.
 5. The following order must be followed:
    1. special meta-arguments, no empty lines between them, but one line after them:
-      1. the `provider` meta-argument, if alternate provider is needed
-      2. dynamic resource meta-arguments: like `count` or `for_each`
-      3. the `depends_on` meta-argument, with each dependency in new line.
+      1. the `source` and optionally `version` argument, only for `module` blocks
+      2. the `provider` meta-argument, if alternate provider is needed
+      3. dynamic resource meta-arguments: like `count` or `for_each`
+      4. the `depends_on` meta-argument, with each dependency in new line
    2. arguments, optionally grouped by single empty line
    3. nested blocks and dynamic blocks
    4. the `connection` and `provisioner` blocks (remember, only use service providers when there is no other option)
