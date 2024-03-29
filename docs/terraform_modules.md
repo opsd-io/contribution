@@ -61,6 +61,23 @@ It is also adviced to check code syntax and conventions with `tflint`.
 Both tools are automatically called by `pre-commit` hooks and their status is also validated in pull request checks.
 **Notice**: some rules that are listed here, are not enforced by syntax checking tools, you have to verify this on your own manually.
 
+## Code formatting rules
+
+1. There must be an empty line between any two blocks, both top-level and nested.
+2. Arguments equal signs in blocks on same level must be aligned and surrounded with at least space.
+3. Nested block must be preceded by empty line, unless there are no arguments.
+4. Additional empty lines are allowed to separate logical groups of arguments within a block.
+5. The following order must be followed:
+   1. special meta-arguments, no empty lines between them, but one line after them:
+      1. the `provider` meta-argument, if alternate provider is needed
+      2. dynamic resource meta-arguments: like `count` or `for_each`
+      3. the `depends_on` meta-argument, with each dependency in new line.
+   2. arguments, optionally grouped by single empty line
+   3. nested blocks and dynamic blocks
+   4. the `connection` and `provisioner` blocks (remember, only use service providers when there is no other option)
+   5. special `lifecycle` meta-block.
+6. No empty lines between closing brackets `}` at the end of nested blocks, maps or objects.
+
 ## Naming objects
 
 Every variable, resource, module invocation and output must use snake case - only lower case, each space is replaced by an underscore (`_`) character.
