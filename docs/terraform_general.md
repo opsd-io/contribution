@@ -24,7 +24,7 @@ tflint 0.40.0
 pre-commit 2.20.0
 ```
 
-The full packages list can be found in the [.tool-versions](.tool-versions) file.
+The complete package list is in the [.tool-versions](.tool-versions) file.
 
 Before we install the tools, we need to add the plugins:
 
@@ -35,7 +35,7 @@ asdf plugin add tflint
 asdf plugin add pre-commit
 ```
 
-To install required tools, run the command as in the example below
+To install the required tools, run the command as in the example below.
 
 ```shell
 asdf install
@@ -43,7 +43,7 @@ asdf install
 
 **Important**: Please keep in mind the versions or tools themselves might change, so it is advised to rerun `asdf install` command after pulling from git.
 
-After the installation process, all the tools will be installed. You can verify this by executing
+After the installation process, all the tools will be installed. You can verify this by executing.
 
 ```shell
 % terraform --version
@@ -58,7 +58,7 @@ More information and examples can be found in the ASDF project [documentation](h
 ### direnv
 
 The direnv config files `.envrc` might be present in many directories.
-Therefore, you must approve each of them by entering a particular directory whenever their contents change.
+So, you'll need to approve each of them by entering a particular directory whenever their contents change.
 
 **Notice**: The descriptive error will pop up if you forget to do so.
 
@@ -69,7 +69,7 @@ To allow direnv to load its config run:
 direnv: loading .envrc
 direnv: export ~PATH
 ```
-**Notice**: output will vary depending on directory in which you run it.
+**Notice**: output will vary depending on the directory in which you run it.
 
 ### Pre-commit hooks
 
@@ -92,8 +92,8 @@ repos:
         description: Check for files that contain merge conflict strings.
         stages: [commit]
       - id: check-executables-have-shebangs
-        name: check executables have shebangs
-        description: Checks that non-binary executables have a proper shebang.
+        name: Check whether executables have shebangs.
+        description: Check whether non-binary executables have a proper shebang.
         stages: [commit]
       - id: detect-private-key
         name: detect private key
@@ -101,7 +101,7 @@ repos:
         stages: [commit]
       - id: check-symlinks
         name: check symlinks
-        description: Checks for symlinks which do not point to anything.
+        description: Checks for symlinks that do not point to anything.
         stages: [commit]
       - id: mixed-line-ending
         name: mixed line ending
@@ -146,11 +146,11 @@ The full hooks list can be found in the [.pre-commit-config.yaml](.pre-commit-co
 
 ## Versioning
 
-The module should be tagged using SemVer and a changelog. Use the [semantic commits](https://www.conventionalcommits.org/en/v1.0.0/) so that we can auto-generate the changelog.
+The module should be tagged using SemVer and a changelog. Use the [semantic commits](https://www.conventionalcommits.org/en/v1.0.0/) to auto-generate the changelog.
 
 ## Repository structure
 
-The below diagram shows a typical terraform module repo structure. To not reinvent the wheel, we adopted the [schema](https://www.terraform.io/language/modules/develop/structure) proposed by Terraform team.
+The diagram below shows a typical Terraform module repo structure. To avoid reinventing the wheel, we adopted the [schema](https://www.terraform.io/language/modules/develop/structure) proposed by the Terraform team.
 
 ```
 .
