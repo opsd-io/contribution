@@ -1,15 +1,11 @@
 # Terraform general
 
-## Useful links
-
-[Project's board](https://github.com/orgs/opsd-io/projects/1)
-
 ## Tools
 
 For local development, you need a few things:
 
-- [asdf](https://asdf-vm.com/) - which manages multiple runtime versions;
-- [direnv](https://direnv.net/) - which augments existing shells with a new feature that can load and unload environment variables.
+- [asdf](https://asdf-vm.com/guide/getting-started.html) - which manages multiple runtime versions;
+- [direnv](https://direnv.net/docs/installation.html) - which augments existing shells with a new feature that can load and unload environment variables.
 
 All these tools must be installed and configured according to their official documentation.
 
