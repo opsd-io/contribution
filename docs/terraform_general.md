@@ -1,9 +1,5 @@
 # Terraform general
 
-## Useful links
-
-[Project's board](https://github.com/orgs/opsd-io/projects/1)
-
 ## Tools
 
 For local development, you need a few things:
